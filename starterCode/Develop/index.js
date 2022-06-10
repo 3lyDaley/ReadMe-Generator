@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+console.log('hello index.js');
 
 // TODO: Create an array of questions for user input
 const questions = [];
