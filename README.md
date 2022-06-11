@@ -15,14 +15,11 @@
 - [Questions](#questions)
 
   ## Installation
-    Can be used through installing VS Code and Node.js
-
-  ## Usage
-    This project will be used to generate README's with user input for any given GitHub project Repo. The file can be pushed to the repo, or copied and pasted into Githubs ReadMe editor.
+    User will need to install VS Code and Node.js, clone the repo, enter integrated terminal through the Develop folder enter the command 
+    ``` node index.js ``` in the terminal.
   
-  ## license 
+  ## License 
     This application is covered by the MIT license.
-
 
   ## Contributors
     Ely Daley is the contributor, and starter code was provided through UCB's coding bootcamp.
@@ -31,11 +28,16 @@
     No tests included
 
   ## Questions
-    Contact Ely daley through their Github or email address provided Below: <br/>
+    `Contact Ely daley through their Github or email address provided Below: <br/>
     </br>
     Find me on Github: [3lyDaley](https://github.com/3lyDaley
     )</br>
     </br>
     Contact By Email: 3ly.daley@gmail.com</br></br>
 
-    _This README was generated with ❤️ by [README-generator](https://github.com/3lyDaley/ReadMe-Generator)_
+
+    ## Usage
+    This project will be used to generate README's with user input for any given GitHub project Repo. The file can be pushed to the repo, or copied and pasted into Githubs ReadMe editor.
+    ### Demo Video
+
+https://user-images.githubusercontent.com/100460009/173168205-5d75a0a3-bf20-4f18-a21e-9006f9857c92.mp4
