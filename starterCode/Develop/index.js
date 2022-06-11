@@ -139,7 +139,15 @@ const writeFile = fileContent => {
 // TODO: Create a function to initialize app
 function init() {
   promptUser()
-  .then(data => console.log(data));
+  .then(data => {
+    return generateMarkdown(data)
+  })
+  .then(pageMarkdown => {
+    return writeFile(pageMarkdown)
+  })
+  .catch(err => {
+    console.log(err);
+  })
 }
 
 // Function call to initialize app

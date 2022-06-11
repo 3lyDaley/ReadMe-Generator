@@ -1,78 +1,11 @@
-// Returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (!license) {
-    return '';
-  }
-  return `
-  ![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)<br />
-  `
-}
-
-// returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (!license) {
-    return '';
-  } else if (license === "Apache") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/apache-2.0/)
-    `
-  }
-  else if (license === "Academic") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/afl-3.0/)
-    `
-  }
-  else if (license === "GNU") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/lgpl-3.0/)
-    `
-  }
-  else if (license === "ISC") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/isc/)
-    `
-  }
-  else if (license === "MIT") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/mit/)
-    `
-  }
-  else if (license === "Mozilla") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/mpl-2.0/)
-    `
-  }
-  else if (license === "Open") {
-    return `
-      [Licence Link](https://choosealicense.com/licenses/osl-3.0/)
-    `
-  }
-
-}
-
-// returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if(!license) {
-    return '';
-  }
-
-  return `
-  ## License 
-    This application is covered by the ${answers.license} license.`
-}
-
-// TODO: Create a function to generate markdown for README
-const generateMarkdown = () => {
-  return `
-  # ${answers.projectTitle}
-
-  ${renderLicenseBadge(license)}
+// function to generate markdown for README
+const generateMarkdown = (data) => {
+  return `# ${data.projectTitle}
+  
+  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)<br />
 
   ## Description
-  ${answers.projectDescription}
+  ${data.projectDescription}
 
   ## Table of Contents
 - [Description](#description)
@@ -84,27 +17,28 @@ const generateMarkdown = () => {
 - [Questions](#questions)
 
   ## Installation
-    ${answers.installation}
+    ${data.installation}
 
   ## Usage
-    ${answers.projectUse}
+    ${data.projectUse}
+  
+  ## license 
+    This application is covered by the ${data.license} license.
 
-    ${renderLicenseSection(license)}
-    ${renderLicenseLink(license)}
 
   ## Contributors
-    ${answers.projectContributors}
+    ${data.projectContributors}
 
   ## Tests
-    ${answers.projectTesting}
+    ${data.projectTesting}
 
   ## Questions
-    ${answers.userQuestions} <br/>
+    ${data.userQuestions} <br/>
     </br>
-    Find me on Github: [${answers.github}](https://github.com/${answers.github}
+    Find me on Github: [${data.github}](https://github.com/${data.github}
     )</br>
     </br>
-    Contact By Email: ${answers.email}</br></br>
+    Contact By Email: ${data.email}</br></br>
 
     _This README was generated with ❤️ by [README-generator](https://github.com/3lyDaley/ReadMe-Generator)_
     `;
