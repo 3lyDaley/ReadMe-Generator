@@ -1,21 +1,75 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  if (!license) {
+    return '';
+  }
+  return `
+  ![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)<br />
+  `
+}
+
+// returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if (!license) {
+    return '';
+  } else if (license === "Apache") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/apache-2.0/)
+    `
+  }
+  else if (license === "Academic") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/afl-3.0/)
+    `
+  }
+  else if (license === "GNU") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/lgpl-3.0/)
+    `
+  }
+  else if (license === "ISC") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/isc/)
+    `
+  }
+  else if (license === "MIT") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/mit/)
+    `
+  }
+  else if (license === "Mozilla") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/mpl-2.0/)
+    `
+  }
+  else if (license === "Open") {
+    return `
+      [Licence Link](https://choosealicense.com/licenses/osl-3.0/)
+    `
+  }
 
 }
 
-// TODO: Create a function that returns the license link
+// returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseSection(license) {
+  if(!license) {
+    return '';
+  }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+  return `
+  ## License 
+    This application is covered by the ${answers.license} license.`
+}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+const generateMarkdown = () => {
   return `
-  <h1 align="center"> ${answers.projectTitle} </h1>
+  # ${answers.projectTitle}
+
+  ${renderLicenseBadge(license)}
 
   ## Description
   ${answers.projectDescription}
@@ -35,8 +89,8 @@ function generateMarkdown(data) {
   ## Usage
     ${answers.projectUse}
 
-  ## License 
-    This application is covered by the ${answers.license} license.
+    ${renderLicenseSection(license)}
+    ${renderLicenseLink(license)}
 
   ## Contributors
     ${answers.projectContributors}
