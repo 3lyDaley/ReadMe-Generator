@@ -74,11 +74,6 @@ Generate your ReadMe.md
     },
     {
       type: 'input',
-      name: 'projectUse',
-      message: 'What will this project be used for?'
-    },
-    {
-      type: 'input',
       name: 'userQuestions',
       message: 'What do I do if I have an issue',
       validate: userQuestions => {
